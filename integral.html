@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>积分管理</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/integral.css" />
+		<style type="text/css">
+			.container-width{
+		   		 max-width: 400px;
+		    }
+		    .form-group{
+		    	margin: 10px auto;
+		    }
+		    .form{
+		    	margin-top: 40px;
+		    }
+		    .label{
+		   		 color: #777;
+		    	font-size: 12px;
+		    }
+		</style>
+		
+	</head>
+	<body>
+			<div class="r-top">
+				<div class="titile hidden-xs hidden-sm">
+					<div class="img">
+						<i class="glyphicon glyphicon-calendar"></i>
+					</div>
+					<div class="detail-info">
+						<span class="p1">积分详情</span><br />
+						<span class="p2"><i class="glyphicon glyphicon-grain"></i>&nbsp;各同学每学期积分情况汇总，每学期更新</span>
+					</div>
+				</div>
+				<div class="input-group">
+					<div class="e-input"><input type="text" placeholder="输入学号或姓名"/></div>
+					<div class="e-input">
+						<select name="">
+							<option value="">请输入班级</option>
+						</select>
+					</div>
+					<div class="e-input">
+						<select name="">
+							<option value="">请输入部室</option>
+						</select>
+					</div>
+					<div class="e-input last"><input type="text" placeholder="输入部室查询"/></div>
+					<div class="search"><a href=""><i class="glyphicon glyphicon-search"></i></a></div>
+				</div>  
+			</div>
+			<div class="r-main">
+				<form action="" class="myform">
+					<div class="option">
+						<span class="o-left">
+							<input type="checkbox" name="all" id="all" class="check" /><span>选择全部</span>
+						</span>
+						<span class="o-right">
+							<a href="javascript:void(0)"><i class="glyphicon glyphicon-download-alt"></i><span>下载</span></a>
+						</span>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-striped table-hover">
+							<thead>
+						    	<tr>
+						    		<td>学号</td>
+						    		<td>姓名</td>
+						    		<td>班级</td>
+						    		<td>分数</td>
+						    		<td>原因</td>
+						    		<td>时间</td>
+						    		<td>部室</td>
+						    		<td>记录者</td>
+						    		<td>录入时间</td>
+						    		<td>修改时间</td>
+						    		<td>学期</td>
+						    		<td>操作</td>
+						    	</tr>
+						    </thead>
+						    <tbody>
+						    	<tr>
+						    		<td class="first"><input type="checkbox"/><span>20161544127</span></td>
+						    		<td>李圆圆</td>
+						    		<td>通信161</td>
+						    		<td>250</td>
+						    		<td>学习成绩加分</td>
+						    		<td>第十八周</td>
+						    		<td>学习部</td>
+						    		<td>张三</td>
+						    		<td>2017-09-08</td>
+						    		<td>/</td>
+						    		<td>2017-2018学年第一学期</td>
+						    		<td><a href="javascript:void(0)" class="edit" data-toggle="modal" data-target="#myModal"><img src="img/edit.png" alt="编辑" width="20px" height="20px" /></a>
+						    			<span class="mid">|</span>
+						    			<a href="javascript:void(0)" class="delete+"><img src="img/delete.png" width="20px" height="20px"/></a></td>
+						    	</tr>
+						    </tbody>
+						</table>
+					</div>
+				</form>
+			</div>
+			<div class="modal fade" id="myModal" tabindex="-1"><!--淡入淡出在最外层添加-->
+        <!--窗口声明-->
+			   <div class="modal-dialog modal-md"><!--小窗口在窗口声明处添加-->
+			        <!-- modal-content 内容声明 -->
+			            <div class="modal-content">
+			                <!--头部-->
+			                <div class="modal-header">
+			                    <button class="close" data-dismiss="modal">
+			                        <span>&times;</span>
+			                    </button>
+			                    <h4 class="modal-title">用户信息</h4>
+			                </div>
+			                <!--主体-->
+			                <div class="modal-body">
+			                    <div class="container container-width">
+			        <div class="title">
+			            <h2>
+			                	<small>按照提示输入信息</small>
+			            </h2>
+			        </div>
+			       <form class="form-horizontal " role="form">
+						<div class="form-group">
+							<label for="firstname" class="col-sm-3 control-label">学号</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="num" value=""
+									   placeholder="请输入学号">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-3 control-label">姓名</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="name" 
+									   placeholder="请输入姓名">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-3 control-label">部室</label>
+							<div class="col-sm-9">
+								<select name="" class="selectpicker form-control">
+									<option value="">学习部</option>
+									<option value="">卫生部</option>
+								</select>
+							</div>
+						</div>
+			
+						<div class="form-group">
+							<label for="" class="col-sm-3 control-label">手机</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="phone" 
+									   placeholder="请输入手机号">
+							</div>
+						</div>
+					</form>
+			    </div>
+			    
+			                </div>
+			                <!--注脚-->
+			                <div class="modal-footer">
+			                	<button type="reset" class="btn btn-default btn-primary">重置</button>
+			                    <button type="button" class="btn btn-default btn-primary">添加</button>
+			                </div>
+			            </div>
+			    </div>
+			</div>
+			<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				$(function(){
+					$('#all').click(function(){
+						if(this.checked){
+							$('.first :checkbox').prop("checked",true)
+						}else{
+							$('.first :checkbox').prop("checked",false)
+						}
+					});
+				})
+				$('#myModal').modal({
+				        backdrop: 'static',
+				        show:false
+				    });
+			</script>
+	</body>
+</html>

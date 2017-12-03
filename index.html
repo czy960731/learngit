@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<style type="text/css">
+			#mask {width:100%;height:960px;background-color:rgba(0,0,0,.3);position:absolute;top:0;left:0;z-index:1;
+    			/*兼容IE8及以下版本浏览器*/
+   			 filter: alpha(opacity=30);display:none;}
+		</style>
+	</head>
+	<body>
+		<div id="mask">
+		</div>
+		
+		<div class="header">
+			<div class="h-info">
+				<span><a href="javascript:void(0)" class="meun"><i class="glyphicon glyphicon-menu-hamburger"></i></a><a href="javascript:void(0)"><i class="glyphicon glyphicon-refresh"></i></a></span>
+				<span class="s2 hidden-xs">积分管理系统</span>
+			</div>
+			<div class="p-info">
+				<span><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></span>
+				<span class="s1"><a>管理员<i class="glyphicon glyphicon-menu-down"></i></a><img src="img/login06.png" alt="管理员头像" class="hidden-xs"/></span>
+				<span class="s3 hidden-xs"><a href="#"><i class="glyphicon glyphicon-cog"></i></a></span>
+				<div class="info">
+					<p></p>
+				</div>
+			</div>
+			
+		</div>
+		<div class="main">
+			<div class="left">
+				<div class="l-header hidden-xs">
+					<div class="myimg">
+						<img src="img/demo-1-bg.jpg" alt="管理员头像" width="54px" height="54px"/>
+					</div>
+					<div class="p-group">
+						<span>Welcom</span><br />
+						<span>管理员</span><br />
+						<span class="unique">状态：<span class="states">在线</span></span>
+					</div>
+					
+				</div>
+				<div class="l-body">
+					<div class="list-body">
+						<ul class="nav nav-pills nav-stacked navbar-brand">
+							<li><a href="jifen.html" target="right"><i class="glyphicon glyphicon-dashboard"></i><span>&nbsp;&nbsp;查看积分信息</span></a></li>
+							<li><a href="integral.html" target="right"><i class="glyphicon glyphicon-list-alt"></i><span>&nbsp;&nbsp;积分信息录入</span></a></li>
+							<li><a href="stuInfo.html" target="right"><i class="glyphicon glyphicon-user"></i><span>&nbsp;&nbsp;学生信息录入</a></span></li>
+							<li><a href="stuManger.html" target="right"><i class="glyphicon glyphicon-education"></i><span>&nbsp;&nbsp;成员管理</a></span></li>
+							<li><a href="termManger.html" target="right"><i class="glyphicon glyphicon-tasks"></i><span>&nbsp;&nbsp;学期管理</a></span></li>
+							<li><a href="welcome.html" target="right"><i class="glyphicon glyphicon-th"></i><span>&nbsp;&nbsp;友情提示</a></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<div class="right" style="position: relative; z-index:7;">
+			<iframe name="right" id="myframe" src="welcome.html" scrolling="no" width="100%" height="100%" frameborder="no"></iframe>
+		</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+		
+			$("#myframe").load(function() {
+			 var iframeHeight = $(this).contents().find("body").height();
+			 $(this).height(iframeHeight);
+		
+			 });
+ 			$('.s1>a').click(function(){
+				$('.info').toggle();
+			});
+			$('.p-info').bind("selectstart",function(){ return false;})
+			
+			$('.meun').click(function(){
+				var bool = $('.l-body').width()<200;
+				if(bool){
+					$('.l-body').toggle();
+				}
+			});
+			
+			function maskshow(){
+				var oDiv = document.getElementById('mask');
+				oDiv.style.display="block";
+			}
+			function maskhidden(){
+				var oDiv = document.getElementById('mask');
+				oDiv.style.display="none";
+			}
+		</script>
+	</body>
+</html>
